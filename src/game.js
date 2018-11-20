@@ -19,6 +19,10 @@ var load_scenes = function() {
   import_all(require.context('./scenes/', true, /\.js$/));
 };
 
+car load_assets = function() {
+  import_all(require.context('./assets/', true, /\.js$/));
+}
+
 var import_all = function(rctx) {
   rctx.keys().forEach(rctx);
 }
@@ -30,5 +34,6 @@ module.exports = function(config, zelement) {
   load_components();
   load_entities();
   load_scenes();
-  Crafty.enterScene('Level 1');
+  load_assets();
+  Crafty.enterScene('Level 1.0');
 };
